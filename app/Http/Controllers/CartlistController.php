@@ -27,7 +27,8 @@ class CartlistController extends Controller
 
         $qtytotal = collect(Cartlist::all())
             ->where('email', auth()->user()->email)
-            ->where('status', 'Open')
+            ->where('
+            status', 'Open')
             ->sum('qty');
 
         $subtotal = collect(Cartlist::all())
