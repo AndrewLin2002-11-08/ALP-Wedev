@@ -105,12 +105,15 @@ Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/wishlist', [WishlistController::class, 'index']);
-Route::post('/wishlistAdd', [WishlistController::class, 'store']);
+// Route::post('/wishlistAdd', [WishlistController::class, 'store']);
 Route::post('/wishlistDel', [WishlistController::class, 'destroy']);
 Route::post('/wishlistToCart', [WishlistController::class, 'wishtocart']);
 
+Route::post('/listAdd', [WishlistController::class, 'store']);
+
+
 Route::get('/cartlist', [CartlistController::class, 'index']);
-Route::post('/cartlistAdd', [CartlistController::class, 'store']);
+// Route::post('/cartlistAdd', [CartlistController::class, 'store']);
 Route::post('/cartlistDel', [CartlistController::class, 'destroy']);
 Route::post('/cartlistToCart', [CartlistController::class, 'carttocart']);
 

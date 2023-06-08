@@ -139,6 +139,11 @@ session_start();
                          <?php if(isset($_GET['error'])){ echo "<span class='text-danger'>".$_GET['error']."</span>" ;}  ?>
                     </div>
                     <div class="form-group">
+                         <label for="email">Phone number:</label>
+                         <input type="email" class="form-control"  name="phone" placeholder="Enter email" required>
+                         <?php if(isset($_GET['error'])){ echo "<span class='text-danger'>".$_GET['error']."</span>" ;}  ?>
+                    </div>
+                    <div class="form-group">
                         <label for="pwd">Password:</label>
                         <input type="password" class="form-control" id="pwd" name="password" placeholder="Password" required>
                     </div>

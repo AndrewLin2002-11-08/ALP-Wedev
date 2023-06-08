@@ -47,29 +47,22 @@ session_start();
                         <h6>Celana Jogger Jeans</h6>
                         <h6>Price :Rp 160000</h6>
                         @auth
-                            <form action="/wishlistAdd" method="post">
-                                @csrf
-                                <div class="form-group">
-                                    <input id=email type="hidden" name="email" value={{ auth()->user()->email }}>
-                                    <input id=product_id type="hidden" name="product_id" value="9">
-                                    <input id=name type="hidden" name="name" value="Celana Jogger Jeans">
-                                    <input id=price type="hidden" name="price" value="160000">
-                                </div>
-                                <button type="submit" role="button" class="btn btn-warning  text-white">Wishlist</button>
-                            </form>
-                            <form action="/cartlistAdd" method="post">
-                                @csrf
-                                <div class="form-group">
-                                    <input id=email type="hidden" name="email" value={{ auth()->user()->email }}>
-                                    <input id=product_id type="hidden" name="product_id" value="9">
-                                    <input id=name type="hidden" name="name" value="Celana Jogger Jeans">
-                                    <input id=price type="hidden" name="price" value="160000">
-                                    <input id=status type="hidden" name="status" value="Open">
-                                </div>
-                                <button type="submit" role="button" class="btn btn-warning  text-white"
-                                    style="margin-bottom:15px">Add To
-                                    Cart</button>
-                            </form>
+                        <form action="/listAdd" method="post">
+                            @csrf
+                            <div class="form-group">
+                                <input id=email type="hidden" name="email" value={{ auth()->user()->email }}>
+                                <input id=product_id type="hidden" name="product_id" value="9">
+                                <input id=name type="hidden" name="name" value="Celana Jogger Jeans">
+                                <input id=price type="hidden" name="price" value="160000">
+                                <label for="fname">Qty :</label>
+                                <input id=qty type="number" name="qty">
+                                <input id=status type="hidden" name="status" value="Open">
+                            </div>
+                            <button type="submit" role="button" class="btn btn-warning  text-white"
+                                style="margin-bottom:15px" name="addlist" value="wishlist">Wishlist</button>
+                            <button type="submit" role="button" class="btn btn-warning  text-white"
+                                style="margin-bottom:15px" name="addlist" value="cartlist">Add To Cart</button>
+                        </form>
                         @else
                             <p><a href="/index#login" role="button" class="btn btn-warning  text-white"
                                     style="margin-bottom:15px">Add To Cart</a>
@@ -85,29 +78,22 @@ session_start();
                         <h6>Celana Pull & Bear</h6>
                         <h6>Price :Rp 180000</h6>
                         @auth
-                            <form action="/wishlistAdd" method="post">
-                                @csrf
-                                <div class="form-group">
-                                    <input id=email type="hidden" name="email" value={{ auth()->user()->email }}>
-                                    <input id=product_id type="hidden" name="product_id" value="10">
-                                    <input id=name type="hidden" name="name" value="Celana Pull & Bear">
-                                    <input id=price type="hidden" name="price" value="180000">
-                                </div>
-                                <button type="submit" role="button" class="btn btn-warning  text-white">Wishlist</button>
-                            </form>
-                            <form action="/cartlistAdd" method="post">
-                                @csrf
-                                <div class="form-group">
-                                    <input id=email type="hidden" name="email" value={{ auth()->user()->email }}>
-                                    <input id=product_id type="hidden" name="product_id" value="10">
-                                    <input id=name type="hidden" name="name" value="Celana Pull & Bear">
-                                    <input id=price type="hidden" name="price" value="180000">
-                                    <input id=status type="hidden" name="status" value="Open">
-                                </div>
-                                <button type="submit" role="button" class="btn btn-warning  text-white"
-                                    style="margin-bottom:15px" name="addcart">Add To
-                                    Cart</button>
-                            </form>
+                        <form action="/listAdd" method="post">
+                            @csrf
+                            <div class="form-group">
+                                <input id=email type="hidden" name="email" value={{ auth()->user()->email }}>
+                                <input id=product_id type="hidden" name="product_id" value="10">
+                                <input id=name type="hidden" name="name" value="Celana Jogger Jeans">
+                                <input id=price type="hidden" name="price" value="160000">
+                                <label for="fname">Qty :</label>
+                                <input id=qty type="number" name="qty">
+                                <input id=status type="hidden" name="status" value="Open">
+                            </div>
+                            <button type="submit" role="button" class="btn btn-warning  text-white"
+                                style="margin-bottom:15px" name="addlist" value="wishlist">Wishlist</button>
+                            <button type="submit" role="button" class="btn btn-warning  text-white"
+                                style="margin-bottom:15px" name="addlist" value="cartlist">Add To Cart</button>
+                        </form>
                         @else
                             <p><a href="/index#login" role="button" class="btn btn-warning  text-white"
                                     style="margin-bottom:15px">Add To Cart</a>
@@ -124,28 +110,22 @@ session_start();
                         <h6>Price :Rp 180000</h6>
 
                         @auth
-                            <form action="/wishlistAdd" method="post">
-                                @csrf
-                                <div class="form-group">
-                                    <input id=email type="hidden" name="email" value={{ auth()->user()->email }}>
-                                    <input id=product_id type="hidden" name="product_id" value="11">
-                                    <input id=name type="hidden" name="name" value="Alexa Jeans">
-                                    <input id=price type="hidden" name="price" value="180000">
-                                </div>
-                                <button type="submit" role="button" class="btn btn-warning  text-white">Wishlist</button>
-                            </form>
-                            <form action="/cartlistAdd" method="post">
-                                @csrf
-                                <div class="form-group">
-                                    <input id=email type="hidden" name="email" value={{ auth()->user()->email }}>
-                                    <input id=product_id type="hidden" name="product_id" value="11">
-                                    <input id=name type="hidden" name="name" value="Alexa Jeans">
-                                    <input id=price type="hidden" name="price" value="180000">
-                                    <input id=status type="hidden" name="status" value="Open">
-                                </div>
-                                <button type="submit" role="button" class="btn btn-warning  text-white" style="margin-bottom:15px">Add To
-                                    Cart</button>
-                            </form>
+                        <form action="/listAdd" method="post">
+                            @csrf
+                            <div class="form-group">
+                                <input id=email type="hidden" name="email" value={{ auth()->user()->email }}>
+                                <input id=product_id type="hidden" name="product_id" value="11">
+                                <input id=name type="hidden" name="name" value="Alexa Jeans">
+                                <input id=price type="hidden" name="price" value="180000">
+                                <label for="fname">Qty :</label>
+                                <input id=qty type="number" name="qty">
+                                <input id=status type="hidden" name="status" value="Open">
+                            </div>
+                            <button type="submit" role="button" class="btn btn-warning  text-white"
+                                style="margin-bottom:15px" name="addlist" value="wishlist">Wishlist</button>
+                            <button type="submit" role="button" class="btn btn-warning  text-white"
+                                style="margin-bottom:15px" name="addlist" value="cartlist">Add To Cart</button>
+                        </form>
                         @else
                             <p><a href="/index#login" role="button" class="btn btn-warning  text-white" style="margin-bottom:15px">Add To Cart</a>
                             </p>
@@ -162,28 +142,22 @@ session_start();
                         <h6>Price :Rp 150000</h6>
 
                         @auth
-                            <form action="/wishlistAdd" method="post">
-                                @csrf
-                                <div class="form-group">
-                                    <input id=email type="hidden" name="email" value={{ auth()->user()->email }}>
-                                    <input id=product_id type="hidden" name="product_id" value="12">
-                                    <input id=name type="hidden" name="name" value="boyfriend jeans white">
-                                    <input id=price type="hidden" name="price" value="150000">
-                                </div>
-                                <button type="submit" role="button" class="btn btn-warning  text-white">Wishlist</button>
-                            </form>
-                            <form action="/cartlistAdd" method="post">
-                                @csrf
-                                <div class="form-group">
-                                    <input id=email type="hidden" name="email" value={{ auth()->user()->email }}>
-                                    <input id=product_id type="hidden" name="product_id" value="12">
-                                    <input id=name type="hidden" name="name" value="boyfriend jeans white">
-                                    <input id=price type="hidden" name="price" value="150000">
-                                    <input id=status type="hidden" name="status" value="Open">
-                                </div>
-                                <button type="submit" role="button" class="btn btn-warning  text-white" style="margin-bottom:15px">Add To
-                                    Cart</button>
-                            </form>
+                        <form action="/listAdd" method="post">
+                            @csrf
+                            <div class="form-group">
+                                <input id=email type="hidden" name="email" value={{ auth()->user()->email }}>
+                                <input id=product_id type="hidden" name="product_id" value="12">
+                                <input id=name type="hidden" name="name" value="boyfriend jeans white">
+                                <input id=price type="hidden" name="price" value="150000">
+                                <label for="fname">Qty :</label>
+                                <input id=qty type="number" name="qty">
+                                <input id=status type="hidden" name="status" value="Open">
+                            </div>
+                            <button type="submit" role="button" class="btn btn-warning  text-white"
+                                style="margin-bottom:15px" name="addlist" value="wishlist">Wishlist</button>
+                            <button type="submit" role="button" class="btn btn-warning  text-white"
+                                style="margin-bottom:15px" name="addlist" value="cartlist">Add To Cart</button>
+                        </form>
                         @else
                             <p><a href="/index#login" role="button" class="btn btn-warning  text-white" style="margin-bottom:15px">Add To Cart</a>
                             </p>
@@ -200,28 +174,22 @@ session_start();
                             <h6>Stice pants</h6>
                             <h6>Price :Rp 85000</h6>
                             @auth
-                                <form action="/wishlistAdd" method="post">
-                                    @csrf
-                                    <div class="form-group">
-                                        <input id=email type="hidden" name="email" value={{ auth()->user()->email }}>
-                                        <input id=product_id type="hidden" name="product_id" value="13">
-                                        <input id=name type="hidden" name="name" value="Stice pants">
-                                        <input id=price type="hidden" name="price" value="85000">
-                                    </div>
-                                    <button type="submit" role="button" class="btn btn-warning  text-white">Wishlist</button>
-                                </form>
-                                <form action="/cartlistAdd" method="post">
-                                    @csrf
-                                    <div class="form-group">
-                                        <input id=email type="hidden" name="email" value={{ auth()->user()->email }}>
-                                        <input id=product_id type="hidden" name="product_id" value="13">
-                                        <input id=name type="hidden" name="name" value="Stice pants">
-                                        <input id=price type="hidden" name="price" value="85000">
-                                        <input id=status type="hidden" name="status" value="Open">
-                                    </div>
-                                    <button type="submit" role="button" class="btn btn-warning  text-white" style="margin-bottom:15px">Add To
-                                        Cart</button>
-                                </form>
+                            <form action="/listAdd" method="post">
+                                @csrf
+                                <div class="form-group">
+                                    <input id=email type="hidden" name="email" value={{ auth()->user()->email }}>
+                                    <input id=product_id type="hidden" name="product_id" value="13">
+                                    <input id=name type="hidden" name="name" value="Stice pants">
+                                    <input id=price type="hidden" name="price" value="85000">
+                                    <label for="fname">Qty :</label>
+                                    <input id=qty type="number" name="qty">
+                                    <input id=status type="hidden" name="status" value="Open">
+                                </div>
+                                <button type="submit" role="button" class="btn btn-warning  text-white"
+                                    style="margin-bottom:15px" name="addlist" value="wishlist">Wishlist</button>
+                                <button type="submit" role="button" class="btn btn-warning  text-white"
+                                    style="margin-bottom:15px" name="addlist" value="cartlist">Add To Cart</button>
+                            </form>
                             @else
                                 <p><a href="/index#login" role="button" class="btn btn-warning  text-white" style="margin-bottom:15px">Add To
                                         Cart</a>
@@ -237,28 +205,22 @@ session_start();
                             <h6>Highwaist line</h6>
                             <h6>Price :Rp 150000</h6>
                             @auth
-                                <form action="/wishlistAdd" method="post">
-                                    @csrf
-                                    <div class="form-group">
-                                        <input id=email type="hidden" name="email" value={{ auth()->user()->email }}>
-                                        <input id=product_id type="hidden" name="product_id" value="14">
-                                        <input id=name type="hidden" name="name" value="Dress Tunik Allsize">
-                                        <input id=price type="hidden" name="price" value="150000">
-                                    </div>
-                                    <button type="submit" role="button" class="btn btn-warning  text-white">Wishlist</button>
-                                </form>
-                                <form action="/cartlistAdd" method="post">
-                                    @csrf
-                                    <div class="form-group">
-                                        <input id=email type="hidden" name="email" value={{ auth()->user()->email }}>
-                                        <input id=product_id type="hidden" name="product_id" value="14">
-                                        <input id=name type="hidden" name="name" value="Dress Tunik Allsize">
-                                        <input id=price type="hidden" name="price" value="150000">
-                                        <input id=status type="hidden" name="status" value="Open">
-                                    </div>
-                                    <button type="submit" role="button" class="btn btn-warning  text-white" style="margin-bottom:15px">Add To
-                                        Cart</button>
-                                </form>
+                            <form action="/listAdd" method="post">
+                                @csrf
+                                <div class="form-group">
+                                    <input id=email type="hidden" name="email" value={{ auth()->user()->email }}>
+                                    <input id=product_id type="hidden" name="product_id" value="14">
+                                    <input id=name type="hidden" name="name" value="Highwaist line">
+                                    <input id=price type="hidden" name="price" value="150000">
+                                    <label for="fname">Qty :</label>
+                                    <input id=qty type="number" name="qty">
+                                    <input id=status type="hidden" name="status" value="Open">
+                                </div>
+                                <button type="submit" role="button" class="btn btn-warning  text-white"
+                                    style="margin-bottom:15px" name="addlist" value="wishlist">Wishlist</button>
+                                <button type="submit" role="button" class="btn btn-warning  text-white"
+                                    style="margin-bottom:15px" name="addlist" value="cartlist">Add To Cart</button>
+                            </form>
                             @else
                                 <p><a href="/index#login" role="button" class="btn btn-warning  text-white" style="margin-bottom:15px">Add To
                                         Cart</a>
@@ -275,29 +237,22 @@ session_start();
                             <h6>Price :Rp 95000</h6>
 
                             @auth
-                                <form action="/wishlistAdd" method="post">
-                                    @csrf
-                                    <div class="form-group">
-                                        <input id=email type="hidden" name="email" value={{ auth()->user()->email }}>
-                                        <input id=product_id type="hidden" name="product_id" value="15">
-                                        <input id=name type="hidden" name="name" value="Sport legging black">
-                                        <input id=price type="hidden" name="price" value="95000">
-                                    </div>
-                                    <button type="submit" role="button" class="btn btn-warning  text-white"
-                                        name="wishlist">Wishlist</button>
-                                </form>
-                                <form action="/cartlistAdd" method="post">
-                                    @csrf
-                                    <div class="form-group">
-                                        <input id=email type="hidden" name="email" value={{ auth()->user()->email }}>
-                                        <input id=product_id type="hidden" name="product_id" value="15">
-                                        <input id=name type="hidden" name="name" value="Sport legging black">
-                                        <input id=price type="hidden" name="price" value="95000">
-                                        <input id=status type="hidden" name="status" value="Open">
-                                    </div>
-                                    <button type="submit" role="button" class="btn btn-warning  text-white" style="margin-bottom:15px">Add To
-                                        Cart</button>
-                                </form>
+                            <form action="/listAdd" method="post">
+                                @csrf
+                                <div class="form-group">
+                                    <input id=email type="hidden" name="email" value={{ auth()->user()->email }}>
+                                    <input id=product_id type="hidden" name="product_id" value="15">
+                                    <input id=name type="hidden" name="name" value="Sport legging black">
+                                    <input id=price type="hidden" name="price" value="95000">
+                                    <label for="fname">Qty :</label>
+                                    <input id=qty type="number" name="qty">
+                                    <input id=status type="hidden" name="status" value="Open">
+                                </div>
+                                <button type="submit" role="button" class="btn btn-warning  text-white"
+                                    style="margin-bottom:15px" name="addlist" value="wishlist">Wishlist</button>
+                                <button type="submit" role="button" class="btn btn-warning  text-white"
+                                    style="margin-bottom:15px" name="addlist" value="cartlist">Add To Cart</button>
+                            </form>
                             @else
                                 <p><a href="/index#login" role="button" class="btn btn-warning  text-white" style="margin-bottom:15px">Add To
                                         Cart</a>
@@ -316,29 +271,22 @@ session_start();
                             <h6>Price :Rp 110000</h6>
 
                             @auth
-                                <form action="/wishlistAdd" method="post">
-                                    @csrf
-                                    <div class="form-group">
-                                        <input id=email type="hidden" name="email" value={{ auth()->user()->email }}>
-                                        <input id=product_id type="hidden" name="product_id" value="16">
-                                        <input id=name type="hidden" name="name" value="Kaos Putih men">
-                                        <input id=price type="hidden" name="price" value="95000">
-                                    </div>
-                                    <button type="submit" role="button" class="btn btn-warning  text-white"
-                                        name="wishlist">Wishlist</button>
-                                </form>
-                                <form action="/cartlistAdd" method="post">
-                                    @csrf
-                                    <div class="form-group">
-                                        <input id=email type="hidden" name="email" value={{ auth()->user()->email }}>
-                                        <input id=product_id type="hidden" name="product_id" value="16">
-                                        <input id=name type="hidden" name="name" value="Kaos Putih men">
-                                        <input id=price type="hidden" name="price" value="95000">
-                                        <input id=status type="hidden" name="status" value="Open">
-                                    </div>
-                                    <button type="submit" role="button" class="btn btn-warning  text-white" style="margin-bottom:15px">Add To
-                                        Cart</button>
-                                </form>
+                            <form action="/listAdd" method="post">
+                                @csrf
+                                <div class="form-group">
+                                    <input id=email type="hidden" name="email" value={{ auth()->user()->email }}>
+                                    <input id=product_id type="hidden" name="product_id" value="16">
+                                    <input id=name type="hidden" name="name" value="Celana Cullote Jeans">
+                                    <input id=price type="hidden" name="price" value="150000">
+                                    <label for="fname">Qty :</label>
+                                    <input id=qty type="number" name="qty">
+                                    <input id=status type="hidden" name="status" value="Open">
+                                </div>
+                                <button type="submit" role="button" class="btn btn-warning  text-white"
+                                    style="margin-bottom:15px" name="addlist" value="wishlist">Wishlist</button>
+                                <button type="submit" role="button" class="btn btn-warning  text-white"
+                                    style="margin-bottom:15px" name="addlist" value="cartlist">Add To Cart</button>
+                            </form>
                             @else
                                 <p><a href="/index#login" role="button" class="btn btn-warning  text-white" style="margin-bottom:15px">Add To
                                         Cart</a>

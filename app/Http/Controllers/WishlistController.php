@@ -38,15 +38,39 @@ class WishlistController extends Controller
             'email' => 'max:255',
             'product_id' => 'max:255',
             'name' => 'max:255',
-            'price' => 'max:255'
+            'price' => 'max:255',
+            'qty' => 'numeric',
+            'status' => 'max:255'
         ]);
+
 
         //dd('reg berhasil');
         //return request()->all();
         //return $validatedData;
-
-        Wishlist::create($validatedData);
-        return redirect('/wishlist');
+        //dd($Request->all());
+        if($Request['addlist'] === 'wishlist')
+        {
+            $datawish['email'] = $Request->email;
+            $datawish['product_id'] = $Request->product_id;
+            $datawish['name'] = $Request->name;
+            $datawish['price'] = $Request->price;
+            $datawish['qty'] = $Request->qty;
+            $datawish['jlh'] = $Request->qty * $Request->price;
+            Wishlist::create($datawish);
+            return redirect('/wishlist');
+        }
+        else
+        {
+            $datacart['email'] = $Request->email;
+            $datacart['product_id'] = $Request->product_id;
+            $datacart['name'] = $Request->name;
+            $datacart['price'] = $Request->price;
+            $datacart['qty'] = $Request->qty;
+            $datacart['jlh'] = $Request->qty * $Request->price;
+            $datacart['status'] = "Open";
+            Cartlist::create($datacart);
+            return redirect('/cartlist');
+        }
 
     }
 
@@ -72,6 +96,8 @@ class WishlistController extends Controller
         $datacart['product_id'] = $Request->product_id;
         $datacart['name'] = $Request->name;
         $datacart['price'] = $Request->price;
+        $datacart['qty'] = $Request->qty;
+        $datacart['jlh'] = $Request->price * $Request->qty;
         $datacart['status'] = "Open";
         $data['id'] = $Request->id;
 

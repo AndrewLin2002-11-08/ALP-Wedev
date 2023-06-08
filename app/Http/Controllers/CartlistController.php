@@ -25,15 +25,21 @@ class CartlistController extends Controller
             ->where('email', auth()->user()->email)
             ->where('status', 'Open');
 
+        $qtytotal = collect(Cartlist::all())
+            ->where('email', auth()->user()->email)
+            ->where('status', 'Open')
+            ->sum('qty');
+
         $subtotal = collect(Cartlist::all())
             ->where('email', auth()->user()->email)
             ->where('status', 'Open')
-            ->sum('price');
+            ->sum('jlh');
 
         return view('cartlist', [
             //"cartlist" => cartlist::all()
             "cartlists" => $data,
-            "subtotal" => $subtotal
+            "qtytotal" => $qtytotal,
+            "grandtotal" => $subtotal
 
 
         ]);
@@ -48,12 +54,14 @@ class CartlistController extends Controller
             'product_id' => 'max:255',
             'name' => 'max:255',
             'price' => 'max:255',
+            'qty' => 'numeric',
             'status' => 'max:255'
         ]);
 
         //dd('reg berhasil');
         //return request()->all();
         //return $validatedData;
+        $validatedData['jlh'] = $validatedData['price'] * $validatedData['qty'];
 
         Cartlist::create($validatedData);
         return redirect('/cartlist');

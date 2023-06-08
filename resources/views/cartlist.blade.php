@@ -33,24 +33,26 @@ session_start();
                 ?>
                 <thead>
                     <tr>
-                        <th>Item Number</th>
                         <th>Item Name</th>
                         <th>Price</th>
+                        <th>Qty</th>
+                        <th>Total</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($cartlists as $cartlist)
                         <tr>
-                            <th>{{ $cartlist->id }}</th>
-                            <th>{{ $cartlist->product_id }}</th>
                             <th>{{ $cartlist->name }}</th>
                             <th>{{ $cartlist->price }}</th>
+                            <th>{{ $cartlist->qty }}</th>
+                            <th>{{ $cartlist->jlh }}</th>
                             <th>
                                 <form action="/cartlistDel" method="post">
                                     @csrf
                                     <input id=id type="hidden" name="id" value="{{ $cartlist->id }}">
-                                    <button type="submit" role="button" class="btn btn-warning  text-white" style="margin-bottom:15px" name="delete"
+                                    <button type="submit" role="button" class="btn btn-warning  text-white"
+                                        style="margin-bottom:15px" name="delete"
                                         onclick="return confirm('are you sure?')">Delete</button>
                                 </form>
                             </th>
@@ -59,7 +61,8 @@ session_start();
                     <tr>
                         <th></th>
                         <th>Total</th>
-                        <th>Rp.{{ number_format($subtotal) }}</th>
+                        <th>{{ number_format($qtytotal) }}</th>
+                        <th>Rp.{{ number_format($grandtotal) }}</th>
                         <th>
                             <form action="/cartlistToCart" method="post">
                                 @csrf
@@ -72,10 +75,10 @@ session_start();
 
                 </tbody>
                 <?php
-
+                
                 echo "<div> <img src='images/wishlist.png' class='image-fluid' height='150' width='150'></div><br/>";
                 echo "<div class='text-bold  h5'>Your List Cart!<div>";
-
+                
                 ?>
                 <?php
                 ?>

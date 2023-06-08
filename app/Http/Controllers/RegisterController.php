@@ -22,6 +22,7 @@ class RegisterController extends Controller
         $validatedData = $Request->validate([
             'email' => 'max:255',
             'password' => 'max:255',
+            'phone_number' => 'max:225',
             'first_name' => 'max:255',
             'last_name' => 'max:255'
         ]);

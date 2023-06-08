@@ -17,6 +17,8 @@ return new class extends Migration
             $table->foreignId('product_id');
             $table->string('name');
             $table->bigInteger('price');
+            $table->bigInteger('qty');
+            $table->bigInteger('jlh');
             $table->string('status');
             $table->timestamps();
         });
